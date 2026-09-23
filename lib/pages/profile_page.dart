@@ -222,9 +222,31 @@ class ProfilePage extends StatelessWidget {
                   child: Card(
                     child: Column(
                       children: <Widget>[
-                        Icon(Icons.star_border_outlined),
-                        Text('45'),
-                        Text('Latihan'),
+                        SizedBox(height: 10),
+                        Icon(
+                          Icons.star_border_outlined,
+                          color: Colors.blueAccent,
+                          size: 25,
+                        ),
+                        SizedBox(height: 5),
+                        Text(
+                          '100',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: GoogleFonts.poppins().fontFamily,
+                          ),
+                        ),
+                        SizedBox(height: 5),
+                        Text(
+                          'Score',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: GoogleFonts.poppins().fontFamily,
+                          ),
+                        ),
+                        SizedBox(height: 10),
                       ],
                     ),
                   ),
@@ -232,26 +254,44 @@ class ProfilePage extends StatelessWidget {
               ],
             ),
           ),
-          // section 5
-          Container(
+          //section 5
+          Padding(
+            padding: const EdgeInsets.all(8.0),
             child: Row(
+              spacing: 10,
               children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.blue)
-                  ),
-                  child: Container(child: Row(
-                    children: [
-                      Icon(CupertinoIcons.pencil, color: Colors.white,),
-                    ],
-                  ),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(
+                        Colors.blueAccent,
+                      ),
+                    ),
+                    child: Row(
+                      spacing: 2,
+                      children: <Widget>[
+                        Icon(CupertinoIcons.pencil),
+                        Text(
+                          'Edit Profile',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontFamily: GoogleFonts.poppins().fontFamily,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                ElevatedButton(onPressed: (){}, child: Container())
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Row(children: [Icon(Icons.share), Text('Bagikan')]),
+                  ),
+                ),
               ],
             ),
-            
           ),
         ],
       ),
